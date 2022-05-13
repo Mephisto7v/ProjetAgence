@@ -1,0 +1,96 @@
+.GridCard{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+}
+
+.CardContainer{
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 40px;
+    padding: 30px;
+    margin: 30px;
+}
+
+.TopInfo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+}
+
+.ImgLogement{
+    width: 60%;
+}
+
+.InfoLogement{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.TypeLogement{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    text-decoration-line: underline;
+    color : black;
+}
+
+.ClassiqueInfo{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.Prix{
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 45px;
+    padding-top: 30px;
+    color: #000000;
+}
+
+.DownInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.ProprietaireText{
+    font-size: 20px;
+    line-height: 22px;
+    color: #000000;
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+.PropText{
+    font-size: 20px;
+    line-height: 22px;
+    color: #000000;
+    padding-top: 10px;
+}
+
+.BtnAgencement{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.BtnDemandeVisite{
+    width: 40%;
+    height: 50px;
+    border-radius: 21px;
+    background: #4B6587;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top : 20px;
+}
