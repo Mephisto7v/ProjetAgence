@@ -29,7 +29,7 @@ const LabelForm = ({children}) => {
 
 const DisplayImg = ({path}) => {
     return <div className={styles.DisplayImg}>
-        <img src={path} alt='pas trouver'/>
+        <img src={path} alt=""/>
     </div>
 }
 

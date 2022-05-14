@@ -86,7 +86,7 @@ const AjoutBien = () => {
                         }} style={{display:'none'}} accept='image/png, image/jpeg'/>
                     </LabelForm>
                     {
-                        file ? <DisplayImg path={file}></DisplayImg> : <DisplayImg style={{display:'none'}}></DisplayImg>
+                        file ? <DisplayImg path={file}></DisplayImg> : <DisplayImg></DisplayImg>
                     }
                     <Button></Button>
                 </RightForm>

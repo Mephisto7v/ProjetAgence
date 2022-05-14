@@ -32,7 +32,7 @@
 }
 
 .labelInput{
-    font-size: 15px;
+    font-size: 20 px;
     line-height: 15px;
     margin : 10px 0 0 0;
 }
@@ -44,6 +44,7 @@
     border: 2px solid #C8C6C6;
     border-radius: 10px;
     padding: 4px;
+    cursor: pointer;
 }
 
 .InputForm{
