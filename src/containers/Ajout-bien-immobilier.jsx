@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Background from '../pure-components/Background/Background'
 import { PrincipalContainer } from '../pure-components/MiddlePart/MiddlePart'
 import { NavBar } from '../pure-components/NavBar/NavBar'
 import {FormContainer, Input, InputImg, Button, RightForm, LeftForm, LabelForm, DisplayImg} from '../pure-components/Formulaire/Formulaire'
+import Axios from 'axios';
 
 const formData = [
     {
@@ -62,6 +63,13 @@ const formData = [
 const AjoutBien = () => {
     const [data, setData] = useState({})
     const [file, setFile] = useState({})
+
+    const submitData = async () => {
+		Axios.post("http://localhost:3001/api/insertBien", {
+        data : data, file : file    
+    })
+    }
+    
     return <Background>    
         <NavBar></NavBar>
         <PrincipalContainer>
@@ -69,7 +77,7 @@ const AjoutBien = () => {
                 <LeftForm>
                     {
                         formData.map(field => {
-                                return <Input type={field.type} placeholder={field.text} onChange={(e) => {
+                                return <Input key={field.key} type={field.type} placeholder={field.text} onChange={(e) => {
                                     setData(prev => {
                                         prev[field.key] = e.target.value
                                         return prev;
@@ -82,13 +90,14 @@ const AjoutBien = () => {
                 <RightForm>
                     <LabelForm>
                         <InputImg type='file' onChange={(e) => {
-                            setFile(URL.createObjectURL(e.target.files[0]))
+                            setFile(e.target)
+                            console.log(file);
                         }} style={{display:'none'}} accept='image/png, image/jpeg'/>
                     </LabelForm>
                     {
                         file ? <DisplayImg path={file}></DisplayImg> : <DisplayImg></DisplayImg>
                     }
-                    <Button></Button>
+                    <Button onClick={submitData}></Button>
                 </RightForm>
             </FormContainer>
         </PrincipalContainer>

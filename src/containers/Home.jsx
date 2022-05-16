@@ -16,7 +16,7 @@ const Home = () => {
             <DownContainer>
             {[instagram, twitter, facebook].map((reseau,index) => {
                 const style = index === 1 ? 'black solid 2px' : ''
-                    return <SocialMedia border={{borderLeft : style, borderRight : style}}>
+                    return <SocialMedia key={index} border={{borderLeft : style, borderRight : style}}>
                     <img src={reseau} alt='pas trouver'/>
                     <div>AGENCETOUSRISQUES</div>
                 </SocialMedia>
