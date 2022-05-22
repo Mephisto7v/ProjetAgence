@@ -22,19 +22,19 @@ const InputImg = ({type, onChange, accept, style}) => {
 }
 
 const LabelForm = ({children}) => {
-    return <label className={styles.LabelForm}>Choisir une image de la maison 
+    return <label className={styles.LabelForm}>Choisir une image du bien immobilier 
         {children}
     </label>
 }
 
 const DisplayImg = ({path}) => {
     return <div className={styles.DisplayImg}>
-        <img src={path} alt=""/>
+        <img className={styles.ImgLogement} src={path} alt=""/>
     </div>
 }
 
-const Button = ({onClick}) => {
-    return <div onClick={onClick} className={styles.btn}> Enregistrer le bien</div>
+const Button = ({onClick, children}) => {
+    return <div onClick={onClick} className={styles.btn}>{children}</div>
 }
 
 const RightForm = ({children}) => {

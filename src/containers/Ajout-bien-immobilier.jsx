@@ -12,11 +12,6 @@ const formData = [
         key: "adresse"
     },
     {
-        text: "Ville",
-        type: "text",
-        key: "ville"
-    },
-    {
         text: "Nom du Propriétaire",
         type: "text",
         key: "proprietaire"
@@ -52,21 +47,30 @@ const formData = [
         key: "dateDispo"
     },
     {
+        text: "Ville",
+        type: "text",
+        key: "ville"
+    },
+    {
         text: "Nombre de garage",
         type: "text",
         key: "nbGarage"
+    },
+    {
+        text: "Id de l'agent",
+        type: "text",
+        key: "idAgent"
     }
 ]
 
-
-
 const AjoutBien = () => {
     const [data, setData] = useState({})
-    const [file, setFile] = useState({})
+    const [fileToDisplay, setfileToDisplay] = useState({})
+    const [fileName, setfileName] = useState({})
 
     const submitData = async () => {
 		Axios.post("http://localhost:3001/api/insertBien", {
-        data : data, file : file    
+        data : data, file : fileName
     })
     }
     
@@ -90,14 +94,14 @@ const AjoutBien = () => {
                 <RightForm>
                     <LabelForm>
                         <InputImg type='file' onChange={(e) => {
-                            setFile(e.target)
-                            console.log(file);
+                            setfileToDisplay(URL.createObjectURL(e.target.files[0]))
+                            setfileName(e.target.files[0].name)
                         }} style={{display:'none'}} accept='image/png, image/jpeg'/>
                     </LabelForm>
                     {
-                        file ? <DisplayImg path={file}></DisplayImg> : <DisplayImg></DisplayImg>
+                        fileToDisplay ? <DisplayImg path={fileToDisplay}></DisplayImg> : <DisplayImg></DisplayImg>
                     }
-                    <Button onClick={submitData}></Button>
+                    <Button onClick={submitData}>Enregistrer le bien</Button>
                 </RightForm>
             </FormContainer>
         </PrincipalContainer>

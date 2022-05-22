@@ -9,6 +9,9 @@
     border-radius: 40px;
     padding: 30px;
     margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .TopInfo{
@@ -79,11 +82,12 @@
 .BtnAgencement{
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-end;
 }
 
-.BtnDemandeVisite{
+.BtnCatalogue{
     width: 40%;
     height: 50px;
     border-radius: 21px;
@@ -93,4 +97,46 @@
     text-align: center;
     color: #FFFFFF;
     margin-top : 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.BtnCatalogue:hover{
+    cursor: pointer;
+    transform : scale(1.1);
+}
+
+.PopUpContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: auto;
+    background-color: rgba(0,0,0, 0.5);
+  }
+  .PopUp {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+    margin: auto;
+    background: #F0E5CF;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.btnPopUp{
+    font-size: 25px;
+    position: absolute;
+    top : 0;
+    right: 0;
+    padding: 30px;
+}
+
+.btnPopUp:hover{
+    cursor: pointer;
 }

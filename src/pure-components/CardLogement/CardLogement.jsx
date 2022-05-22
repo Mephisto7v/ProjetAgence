@@ -47,10 +47,26 @@ const InfoPropietaire = ({proprietaire, adresse, ville, dateDispo}) => {
     </div>
 }
 
-const BtnDemandeVisite = () => {
+const BtnContainer = ({children}) => {
     return <div className={styles.BtnAgencement}>
-        <div className={styles.BtnDemandeVisite}>Demander une visite</div>
+        {children}
     </div>
+}
+
+const BtnCatalogue = ({children, onClick}) => {
+    return  <div onClick={onClick} className={styles.BtnCatalogue}>{children}
+    </div>
+}
+
+const PopUp = ({closePopup, children, submitData}) => {
+    return <div className={styles.PopUpContainer}>
+                <div className={styles.PopUp}>
+                    <div className={styles.btnPopUp} onClick={closePopup}>
+                        &times;
+                    </div>
+                    {children}
+            </div>
+        </div>
 }
 
 export {
@@ -60,6 +76,8 @@ export {
     InfoLogement,
     DownInfo,
     InfoPropietaire,
-    BtnDemandeVisite,
-    GridCard
+    BtnContainer,
+    BtnCatalogue,
+    GridCard,
+    PopUp
 }
